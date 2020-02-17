@@ -1,2 +1,2 @@
-# TemperatureRaspi
-Création d'une interface en C++ (Qt) pour afficher les données d'un capteur de température
+# Oscilloscope
+Création d'une interface en C++ (Qt) pour simuler un oscilloscope

@@ -1,21 +1,29 @@
-#ifndef INTERFACE_H
+﻿#ifndef INTERFACE_H
 #define INTERFACE_H
 
 #include <QWidget>
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class Interface; }
-QT_END_NAMESPACE
+#include <QPoint>
 
 class Interface : public QWidget
 {
     Q_OBJECT
 
+private:
+    int m_largeur=900;
+    int m_hauteur=600;
+    double m_unite_x=50;
+    double m_unite_y=50;
+    double m_amp_cos=1;
+    double m_amp_sin=1;
+
 public:
     Interface(QWidget *parent = nullptr);
-    ~Interface();
+    QPoint coo(double x, double y);
+    void paintEvent(QPaintEvent *event) override;
 
-private:
-    Ui::Interface *ui;
+public slots:
+    void changeEchelle(int h);
+    void changeAmpCos(int amp_cos);
+    void changeAmpSin(int amp_sin);
 };
 #endif // INTERFACE_H
